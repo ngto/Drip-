@@ -1,0 +1,17 @@
+/* pages/chart/chart.wxss */
+
+.chart-box {
+  width: 100%;
+  height: 400rpx;
+  position: relative;
+}
+
+.chart-title {
+  position: absolute;
+  top: 30rpx;
+  left: 60rpx;
+}
+.chart-title text{
+  display: block;
+  font-size: 24rpx;
+}

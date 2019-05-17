@@ -1,0 +1,98 @@
+<!--pages/bill/bill.wxml-->
+<view class='main'>
+  <view class='cu-load load-modal' wx:if="{{loadMoreFlag}}">
+    <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+    <view class='gray-text'>加载中...</view>
+    <view class="mask"></view>
+  </view>
+  <view class='content main'>
+    <view class="bg-green padding content-header">
+      <view class='create-date'>
+        <picker mode="date" value="{{date}}" start="2009-09" end="{{defaultDate}}" value="{{date}}" fields="month" bindchange="DateChange">
+          <button class="cu-btn picker round line-white padding-lr-sm">
+            <text class="cuIcon-back"></text>
+            <text>{{date}}</text>
+            <text class="cuIcon-right"></text>
+          </button>
+        </picker>
+      </view>
+      <view class='price-box'>
+        <view class="flex">
+          <view class="flex-sub padding-lr">
+            <text class='text-price-title'>收入</text>
+            <text class="text-price">{{incomeMoney}}</text>
+          </view>
+          <view class="flex-sub padding-lr solids-left">
+            <text class='text-price-title'>支出</text>
+            <text class="text-price">{{expenditureMoney}}</text>
+          </view>
+          <view class="flex-sub padding-lr solids-left">
+            <text class='text-price-title'>余额</text>
+            <text class="text-price">{{incomeMoney-expenditureMoney}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content bg-white">
+      <scroll-view class="timeline-box" scroll-y style="height:100%;">
+        <view wx:if="{{billList.length>0}}">
+          <view class="cu-timeline" wx:for="{{billList}}" wx:key>
+            <view class="cu-time">{{item.create_date}}</view>
+            <view class="cu-item">
+              <view class="cu-list menu" wx:for="{{item.data}}" wx:for-item="cell" wx:key>
+                <view class="cu-item ">
+                  <view class="content">
+                    <text class="iconfont bg-green {{expenditureList[cell.consumption_type].icon}}"></text>
+                    <text class="text-black">{{expenditureList[cell.consumption_type].name}}</text>
+                  </view>
+                  <view class="action">
+                    <text class="text-black">{{cell.amount_type == "0" ?"-" :"+"}}{{cell.money}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="no-data" wx:else>
+          <view class="iconfont icon-meiyoushuju text-gray"></view>
+          <view class="text-gray">没有数据</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="cu-bar tabbar bg-white">
+      <view class="action text-green">
+        <navigator url="/pages/statistics/statistics" hover-class="none" redirect>
+          <view class="cuIcon-rechargefill"></view>
+          账单
+        </navigator>
+      </view>
+
+      <view class="action text-gray">
+        <navigator url="/pages/chart/chart" hover-class="none" redirect>
+          <view class="cuIcon-rankfill"></view>
+          图表
+        </navigator>
+      </view>
+      <view class="action text-gray add-action">
+        <navigator url="/pages/release/release" hover-class="none">
+          <button class="cu-btn cuIcon-add bg-green shadow"></button>
+          记账
+        </navigator>
+      </view>
+      <!-- <view class="action text-gray">
+        <navigator url="/pages/statistics/statistics" hover-class="none" redirect>
+          <view class="cuIcon-formfill"></view>
+          统计
+        </navigator>
+      </view> -->
+      <view class="action text-gray">
+        <navigator url="/pages/my/my" hover-class="none" redirect>
+          <view class="cuIcon-peoplefill"></view>
+          我的
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

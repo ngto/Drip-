@@ -1,0 +1,38 @@
+/* pages/bill/bill.wxss */
+
+.create-date {
+  padding-left: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.price-box .text-price-title, .price-box .text-price {
+  width: 180rpx;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cu-list.menu>.cu-item {
+  background: #f9f9f9;
+  padding-left: 0;
+}
+
+.price-box .text-price-title {
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+
+.cu-timeline:last-child .cu-item .cu-item {
+  margin-bottom: 50rpx;
+}
+
+.cu-timeline .cu-time {
+  width: 180rpx;
+  text-align: left;
+  padding-left: 20rpx;
+}
+
+.cu-timeline>.cu-item {
+  padding: 30rpx 30rpx 30rpx 100rpx;
+}

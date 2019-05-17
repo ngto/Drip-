@@ -1,0 +1,92 @@
+<!--pages/chart/chart.wxml-->
+<view class='main'>
+  <view class='cu-load load-modal' wx:if="{{loadMoreFlag}}">
+    <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+    <view class='gray-text'>加载中...</view>
+    <view class="mask"></view>
+  </view>
+  <view class="content bg-white main">
+    <view class="bg-white shadow-warp content-header flex align-center justify-between padding-lr">
+      <view class='nav-tab-box min'>
+        <view class='nav-tab'>
+          <view class="nav-tab-item {{tabCur== '0' ? 'bg-green' : ''}}" data-id="0" bindtap='tabSelect'>支出</view>
+          <view class="nav-tab-item {{tabCur== '1' ? 'bg-green' : ''}}" data-id="1" bindtap='tabSelect'>收入</view>
+        </view>
+      </view>
+      <view class='create-date'>
+        <picker mode="date" value="{{date}}" start="2009-09" end="{{defaultDate}}" value="{{date}}" fields="month" bindchange="DateChange">
+          <button class="cu-btn picker round line-black padding-lr-sm">
+            <text class="cuIcon-back"></text>
+            <text>{{date}}</text>
+            <text class="cuIcon-right"></text>
+          </button>
+        </picker>
+      </view>
+    </view>
+    <view class="chart-box">
+      <view class="chart-title">
+        <text>{{tabCur== "0" ? "总支出":"总收入"}}:{{monthTotal}}</text>
+        <text>平均值:{{monthAverage}}</text>
+      </view>
+      <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+    </view>
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action">
+        <text class="cuIcon-rankfill text-green"></text>支出排行榜
+      </view>
+    </view>
+    <view class="content">
+      <scroll-view class="timeline-box" scroll-y style="height:100%;">
+        <view class="cu-list menu sm-border" wx:if="{{cTypeRankList.length>0}}">
+          <view class="cu-item bg-white" wx:for="{{cTypeRankList}}" wx:key>
+            <view class="content">
+              <text class="iconfont bg-green {{expenditureList[item.consumption_type].icon}}"></text>
+              <text class="text-black">{{expenditureList[item.consumption_type].name}}</text>
+            </view>
+            <view class="action">
+              <text class="text-black">{{item.totalMoney}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="no-data" wx:else>
+          <view class="iconfont icon-meiyoushuju text-gray"></view>
+          <view class="text-gray">没有数据</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="cu-bar tabbar bg-white">
+      <view class="action text-gray">
+        <navigator url="/pages/bill/bill" hover-class="none" redirect>
+          <view class="cuIcon-rechargefill"></view>
+          账单
+        </navigator>
+      </view>
+      <view class="action text-green">
+        <navigator url="/pages/chart/chart" hover-class="none" redirect>
+          <view class="cuIcon-rankfill"></view>
+          图表
+        </navigator>
+      </view>
+      <view class="action text-gray add-action">
+        <navigator url="/pages/release/release" hover-class="none">
+          <button class="cu-btn cuIcon-add bg-green shadow"></button>
+          记账
+        </navigator>
+      </view>
+      <!-- <view class="action text-gray">
+        <navigator url="/pages/statistics/statistics" hover-class="none" redirect>
+          <view class="cuIcon-formfill"></view>
+          统计
+        </navigator>
+      </view> -->
+      <view class="action text-gray">
+        <navigator url="/pages/my/my" hover-class="none" redirect>
+          <view class="cuIcon-peoplefill"></view>
+          我的
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

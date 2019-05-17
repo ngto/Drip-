@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "记一笔",
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

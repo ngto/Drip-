@@ -1,0 +1,91 @@
+/* miniprogram/pages/release/release.wxss */
+
+.release-box {
+  background: #f8f8f8;
+}
+
+.screen-swiper {
+  min-height: 360rpx;
+}
+
+
+
+.iconfont {
+  font-size: 50rpx;
+  background: #f8f8f8;
+  border-radius: 100%;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.iconfont.bg-green {
+  background: #39b54a;
+}
+
+.release-money {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  padding: 0 20rpx;
+}
+
+.release-money .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.release-money .icon text {
+  font-size: 28rpx;
+  color: #333;
+  margin-left: 20rpx;
+}
+
+.total-money input {
+  text-align: right;
+  height: 100%;
+  font-size: 24px;
+  color: #333;
+}
+
+.digital-keyboard-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-keyboard-top .cu-form-group {
+  flex: 1;
+}
+
+.digital-keyboard-top .solids-left {
+  width: 25.25%;
+}
+
+.digital-keyboard-top .solids-left .picker {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  border-radius: 0;
+  text-align: center;
+}
+
+.digital-keyboard-bottom .cu-btn {
+  width: 100%;
+  height: 100rpx;
+  border-radius: 0;
+  background: #fff;
+}
+
+.digital-keyboard-bottom .cu-btn.max {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 188rpx;
+  height: 200rpx;
+}

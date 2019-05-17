@@ -1,0 +1,71 @@
+<!--miniprogram/pages/release/release.wxml-->
+<view class='main'>
+  <!-- <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">记一笔</view>
+  </cu-custom> -->
+  <view class='content main'>
+    <view class='release-box'>
+      <view class='nav-tab-box bg-white'>
+        <view class='nav-tab'>
+          <view class="nav-tab-item {{TabCur== '0' ? 'bg-green' : ''}}" data-id="0" bindtap='tabSelect'>支出</view>
+          <view class="nav-tab-item {{TabCur== '1' ? 'bg-green' : ''}}" data-id="1" bindtap='tabSelect'>收入</view>
+        </view>
+      </view>
+    </view>
+    <view class="content bg-white">
+      <scroll-view class="timeline-box" scroll-y style="height:100%;">
+        <view wx-if="{{TabCur==0}}" class="cu-list grid col-5 no-border">
+          <view class="cu-item" wx:for="{{ExpenditureList}}" data-item="{{item}}" bindtap='listChange' wx:key wx:if="{{index<=32}}">
+            <view class="{{ ListCurItem.id == index ? 'bg-green':'' }} iconfont {{item.icon}} ">
+            </view>
+            <text class="{{ ListCurItem.id == index ? 'text-green':'' }}">{{item.name}}</text>
+          </view>
+        </view>
+        <view wx-if="{{TabCur==1}}" class="cu-list grid col-4 no-border">
+          <view class="cu-item" wx:for="{{ExpenditureList}}" data-item="{{item}}" bindtap='listChange' wx:key wx:if="{{index>32}}">
+            <view class="{{ ListCurItem.id == index ? 'bg-green':'' }} iconfont {{item.icon}} ">
+            </view>
+            <text class="{{ ListCurItem.id == index ? 'text-green':'' }}">{{item.name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class="release-money bg-white">
+      <view class='icon'>
+        <view class='iconfont {{ListCurItem.icon}} bg-green'></view>
+        <text> {{ListCurItem.name}}</text>
+      </view>
+      <view class='total-money'>
+        <input value="{{Monetary || '0.00'}}" disabled="disabled"></input>
+      </view>
+    </view>
+    <view class='num-keyboard'>
+      <view class='digital-keyboard'>
+        <view class='digital-keyboard-top solids-top'>
+          <view class="cu-form-group">
+            <input placeholder="备注一下" bindinput='bindKeyInput' value='{{Remarks}}'></input>
+          </view>
+          <view class='solids-left'>
+            <!-- <button class="cu-btn">今天</button> -->
+            <picker mode="date" value="{{date}}" start="2015-09-01" end="{{defaultDate}}" bindchange="DateChange">
+              <view class="picker">
+                {{date}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class='digital-keyboard-bottom solids-top'>
+          <view class="cu-list grid col-4">
+            <view class="cu-item" wx:for="{{NumKeyboard}}" data-num="{{item.id}}" bindtap='numMoney' wx:key>
+              <button class="cu-btn">{{item.text}}</button>
+            </view>
+            <button class="cu-btn max" bindtap='totalMoneyEnd' disabled="{{ButtonStatus}}">{{CalculationText}}</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

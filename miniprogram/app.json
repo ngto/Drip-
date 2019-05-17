@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/bill/bill",
+    "pages/release/release",
+    "pages/statistics/statistics",
+    "pages/chart/chart",
+    "pages/my/my",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "Drip记账",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

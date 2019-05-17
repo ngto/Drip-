@@ -1,0 +1,15 @@
+<!--miniprogram/pages/about/about.wxml-->
+<view class='mamin'>
+  <view class='content'>
+    <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+      <view class='text-center margin-bottom text-lg  text-grey'>关于Drip记账</view>
+      <view class='text-content'>
+        <view>Hi！欢迎使用Drip记账！</view>
+        <view class='margin-top-sm'>首先感谢文晓港开发的ColorUI组件库</view>
+        <view class='margin-top-sm'>该项目是一款记账小程序</view>
+        <view class='margin-top-sm'>QQ:291114205</view>
+        <view class='margin-top-sm'>更多功能敬请期待！</view>
+      </view>
+    </view>
+  </view>
+</view>
