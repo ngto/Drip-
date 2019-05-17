@@ -1,6 +1,10 @@
 # Drip记账（微信小程序）
 
-![Alt text](/images/123.jpg "Optional title")
+![text](/images/123.jpg "Optional title")
+
+# 小程序码
+
+<img src="/images/123.jpg" width="200px">
 
 # 参考文档
 - [colorUI](https://www.color-ui.com)
