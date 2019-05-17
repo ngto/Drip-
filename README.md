@@ -1,5 +1,7 @@
 # Drip记账（微信小程序）
 
+# UI展示
+
 ![text](/images/123.jpg "Optional title")
 
 # 小程序码
