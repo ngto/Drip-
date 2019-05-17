@@ -6,6 +6,10 @@
 
 <img src="/images/code.jpg" width="280px">
 
+# 说明
+
+### 项目供个人学习使用，如有侵权请联系QQ:291114205
+
 # 参考文档
 
 - [微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev)
