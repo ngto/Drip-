@@ -7,7 +7,10 @@
 <img src="/images/code.jpg" width="280px">
 
 # 参考文档
-- [colorUI](https://www.color-ui.com)
+
 - [微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev)
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+
+# 特别感谢
+- [文晓港开发的colorUI组件库](https://www.color-ui.com)
 
