@@ -4,7 +4,7 @@
 
 # 小程序码
 
-<img src="/images/code.jpg" width="200px" style="margin:0 auto;">
+<img src="/images/code.jpg" width="280px">
 
 # 参考文档
 - [colorUI](https://www.color-ui.com)
