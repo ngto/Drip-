@@ -1,6 +1,4 @@
-# Drip记账
-
-## 微信小程序
+# Drip记账（微信小程序）
 
 # 云开发 quickstart
 
